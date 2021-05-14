@@ -2,41 +2,28 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("users", {
-      user_id: {
+    await queryInterface.createTable("journal_posts", {
+      journal_post_id: {
         type: Sequelize.BIGINT,
         autoIncrement: true,
         primaryKey: true,
         allowNull: false,
       },
-      full_name: {
+      user_id: {
+        type: Sequelize.BIGINT,
+        foreignKey: true,
+        allowNull: false
+      },
+      title: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      display_name: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: false
-      },
-      birthday: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      email_address: {
+      description: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      password: {
+      image: {
         type: Sequelize.STRING,
-        allowNull: false
-      },
-      status: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      token: {
-        type: Sequelize.STRING,
-        allowNull: false
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -56,6 +43,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-     await queryInterface.dropTable('users');
+     await queryInterface.dropTable('journal_posts');
   }
 };
