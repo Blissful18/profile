@@ -53,9 +53,7 @@ let add = (req,res) => {
                 res.render('journals/add', {
                     user_id: form_data.user_id,
                     title: form_data.title,
-                    description: form_data.descriptions,
-                    created_at: form_data.created_at,
-                    updated_at: form_data.updated_at                     
+                    description: form_data.description                    
                 })
             } else if(result) {                
                 req.flash('success', 'Journal successfully added');
