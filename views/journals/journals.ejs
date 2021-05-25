@@ -115,7 +115,7 @@
                 <tr>
                     <th scope="row"><%= (i+1) %></th>
                     <td><%= data[i].title%></td>
-                    <td><%= data[i].created_at%></td>
+                    <td><%= data[i].createdAt%></td>
                     <td>
                         <a class="btn btn-primary edit" href="../journals/<%=data[i].journal_post_id%>/entry">View</a>
                         <a class="btn btn-danger edit" onclick="return alert('Are You sure?')" href="../journals/<%=data[i].journal_post_id%>/delete">Delete</a>

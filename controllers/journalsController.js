@@ -1,3 +1,4 @@
+const { NOW } = require("sequelize");
 const connection = require("../configs/DBConnection");
 
 let showJournalPage = (req,res) => {
@@ -46,6 +47,7 @@ let add = (req,res) => {
             user_id: userId,
             title: title,
             description: description,
+            image: null
         }
         connection.query('INSERT INTO journal_posts SET ?', form_data, function(err, result) {
             if (err) {
@@ -53,7 +55,7 @@ let add = (req,res) => {
                 res.render('journals/add', {
                     user_id: form_data.user_id,
                     title: form_data.title,
-                    description: form_data.description                    
+                    description: form_data.description,                  
                 })
             } else if(result) {                
                 req.flash('success', 'Journal successfully added');
@@ -111,7 +113,6 @@ let edit = (req,res) => {
         var form_data = {
             title: title,
             description: description,
-            updated_at: updated_at
         }
         connection.query('UPDATE journal_posts SET ? WHERE journal_post_id = ' + id, form_data, function(err, result) {
             if (err) {
