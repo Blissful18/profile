@@ -1,4 +1,7 @@
 const homePageService = require("../services/homePageService");
+const { NOW } = require("sequelize");
+const connection = require("../configs/DBConnection");
+
 
 let handleHelloWorld = (req, res) => res.render("home/home",{user_id:req.user.user_id});
 
