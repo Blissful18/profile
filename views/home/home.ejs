@@ -298,7 +298,28 @@ a#prev_page_button:hover{
                     <h1>Please click the journals tab!</h1>
                     <p>Love, Shrek</p>
                 </div>
-          
+
+                <% if(data.length) { %>
+                    <% for(var i = 0; i< data.length; i++) { %>
+
+                <div class="container">
+                    <div class="mt-4 mb-3 row justify-content-center" id="myDiv">
+                        <div class="col-7 border p-3 pink">
+                            <div class="mb-3">
+                                <div class="card-body pink">
+                                    <div align="center"><h3>Journal No. <%= (i+1) %> !</h3></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h1><%= data[i].title%></h1>
+                    <p><%= data[i].description%></p>
+                </div>
+                    <% } %>
+                <% } %>
             </div>
         </div>
     </div>
