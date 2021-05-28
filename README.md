@@ -10,6 +10,6 @@ Labandiro, Ma. Carmela
 Install: 
 npm i nodemon,
 npm i sequelize,
-(create design_project on db),
+(create diary_db on db),
 sequelize-cli,
 npx sequelize-cli db:migrate

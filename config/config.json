@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "design_project",
+    "database": "diary_db",
     "host": "localhost",
     "dialect": "mysql"
   },
